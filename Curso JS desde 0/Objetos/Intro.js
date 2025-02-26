@@ -5,6 +5,7 @@ let direccion = {
     numero: 15,
 };
 
+// Mejor
 let user = {
     email: 'nico@holamundo.es',
     name: 'Nicolas',
