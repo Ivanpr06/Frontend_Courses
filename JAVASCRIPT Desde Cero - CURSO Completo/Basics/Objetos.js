@@ -39,7 +39,7 @@ let persona3 = {
     edad: 25,
     alias: "El fino",
     andar: function(){
-        console.log("La persona camina");
+        console.log(this.nombre, "camina");
     },
     trabajo:{
         nombre:"Programador",
@@ -53,6 +53,7 @@ let persona3 = {
 console.log(persona3);
 console.log(persona3.trabajo);
 persona3.trabajo.trabaja()
+persona3.andar()
 
 // Igualdad de objetos
 let persona4 = {
@@ -66,3 +67,12 @@ console.log(persona4);
 
 console.log(persona == persona4);
 
+// Funciones como objetos
+function Persona(nombre, edad){
+    this.nombre = nombre
+    this.edad = edad
+}
+
+let persona5 = new Persona("Manolo", 54)
+
+console.log(persona5);
