@@ -73,4 +73,25 @@ let {nombre: nombre4, trabajo:{nombre: nombretrabajo}} = persona3
 console.log(nombre4);
 console.log(nombretrabajo);
 
-// Propagación
+// Propagación -> Permite expandir un valor a otro array u objeto
+
+// Sintaxis Array 
+let ArrayEJ = [1, 2, 3, 4]
+// Copia Exacta de ArrayEJ
+let miArray2 = [...ArrayEJ]
+// Añadiendo valores a otra copia
+let miArray3 = [...ArrayEJ, 5, 6]
+// Se puede añadir tambien constantes
+let miArray4 = [...ArrayEJ, ...miArray2, ...miArray3]
+
+console.log(miArray2);
+console.log(miArray3);
+console.log(miArray4);
+
+// Sintaxis Objeto
+let persona6 = {...persona}
+let persona7 = {...persona, email: "manolo@gmail.com"}
+
+console.log(persona6);
+console.log(persona7);
+
