@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
 </head>
+
 <body>
     <h2>To Do List</h2>
     <input class="js-input" placeholder="Insert Action">
+    <input type="date">
     <button onclick="
         addTodo()
     
-    ">Boton</button>
+    ">Añadir</button>
+
+    <div class="js-todo-list">Texto</div>
 
     <script>
-        let todoList = []
+        let todoList = [{
+            nombre: 'make dinner',
+            fecha: '2022-12-22'
+        }, {
+            nombre: 'lavar platos',
+            fecha: '2012-04-12'
+        }]
 
-        function addTodo(){
+        renderTodoList()
+
+        function renderTodoList() {
+            let todoListHTML = ''
+            for (let i = 0; i < todoList.length; i++) {
+                const todo = todoList[i]
+                const html = `<p>
+                    ${todo} 
+                    <button onclick=""
+                        todoList.splice(${i}, 1)
+                        renderTodoList()
+                        
+                    >Eliminar</button>
+                    </p>`
+                todoListHTML += html
+            }
+            console.log(todoListHTML)
+
+            document.querySelector('.js-todo-list').innerHTML = todoListHTML
+        }
+
+        function addTodo() {
             let inputElement = document.querySelector('.js-input')
             const name = inputElement.value
 
@@ -24,10 +56,13 @@
             console.log(todoList);
             // Eliminamos lo anteriormente escrito
             inputElement.value = ''
-            
+
+            renderTodoList()
         }
+
 
 
     </script>
 </body>
+
 </html>
