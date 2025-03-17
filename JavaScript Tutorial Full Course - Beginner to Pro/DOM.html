@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>Hola</button>
+
+    <script>
+        // Elimina todo lo escrito en el body por el mensaje que escribamos
+        document.body.innerHTML = 'hello'
+        // Cambia el titulo de la páguina web
+        document.title = 'Good Job !'
+
+        console.log(document.body.innerHTML)
+        // Podemos hacer más cosas
+        document.body.innerHTML = '<button style="background-color:red",>Boton</button>'
+        
+        // Selecciona codigo de elementos de la página web
+        console.log(document.querySelector('button').innerHTML)
+        // Selecciona contenido del código de elementos de la página web
+        console.log(document.querySelector('button'))
+        // Se puede cambiar el texto
+        document.querySelector('button').innerHTML = 'Cambiado'
+    </script>
+</body>
+</html>

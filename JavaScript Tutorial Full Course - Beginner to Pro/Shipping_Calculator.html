@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping</title>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        .js-cost-input{
+            font-size: 15px;
+            padding: 7.5px;
+            padding-left: 10px;
+        }
+
+        .calcularBoton{
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 12.5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amazon Shipping Calculator</h1>
+    <p>Menos de 40$ se añadirá 10$ por gastos de envío</p>
+    <p>Más de 40$ no se añadirán los gastos de envío</p>
+
+    <input class="js-cost-input" placeholder="Coste $"
+     onkeydown="
+        if(event.key === 'Enter'){
+            calcularTotal()
+        }">
+    <button class="calcularBoton" onclick="
+        calcularTotal()
+    ">Calcular</button>
+
+    <p class="js-total-cost"></p>
+
+
+    <script>
+        function calcularTotal(){
+            let inputElement = document.querySelector('.js-cost-input')
+            // Obtenemos el valor de la clase y la combierte en un String, con Number lo convertimos en un número
+            let cost = Number(inputElement.value);
+
+            if(cost < 40){
+                cost += 10
+            }
+
+            document.querySelector('.js-total-cost').innerHTML = `El pedido costará ${cost}$`
+        }
+    </script>
+</body>
+</html>
