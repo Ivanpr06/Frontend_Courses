@@ -1,33 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+
+    <style>
+        .text {
+            padding: 5px;
+        }
+
+        .boton {
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .todo-grid,
+        .todo-input-grid {
+            display: grid;
+            grid-template-columns: 200px 150px 100px;
+            column-gap: 10px;
+            row-gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+    </style>
 </head>
+
 <body>
     <h2>To Do List</h2>
-    <input class="js-input" placeholder="Insert Action">
-    <button onclick="
-        addTodo()
-    
-    ">Boton</button>
+
+    <div class="todo-input-grid">
+        <input class="js-input text" placeholder="Insert Action">
+        <input class="js-date-input text" type="date">
+        <button class="boton" onclick="
+            addTodo()
+            ">Añadir</button>
+    </div>
+
+    <div class="js-todo-list todo-grid"></div>
+
+
 
     <script>
         let todoList = []
 
-        function addTodo(){
+        renderTodoList()
+
+        function renderTodoList() {
+            let todoListHTML = ''
+            todoList.forEach(function (todoObject, index) {
+                const name = todoObject.name
+                const date = todoObject.date
+
+                const html = `
+                    <div>${name}</div> 
+                    <div>${date}</div>
+                    <button class="boton" style="background-color:rgb(167, 0, 0)" onclick="
+                        todoList.splice(${index}, 1)
+                        renderTodoList()
+                    ">Eliminar</button>`
+                todoListHTML += html
+            })
+
+            document.querySelector('.js-todo-list').innerHTML = todoListHTML
+        }
+
+        function addTodo() {
             let inputElement = document.querySelector('.js-input')
             const name = inputElement.value
 
-            todoList.push(name)
-            console.log(todoList);
+            let dateInputElement = document.querySelector(`.js-date-input`)
+            const date = dateInputElement.value
+
+            todoList.push({
+                name: name,
+                date: date,
+            })
+
             // Eliminamos lo anteriormente escrito
             inputElement.value = ''
-            
+
+            renderTodoList()
         }
+
 
 
     </script>
 </body>
+
 </html>

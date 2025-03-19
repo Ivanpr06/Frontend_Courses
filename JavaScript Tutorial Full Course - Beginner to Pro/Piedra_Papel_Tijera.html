@@ -9,13 +9,14 @@
     <style>
         body {
             text-align: center;
-            padding:10px;
+            padding: 10px;
             background-color: rgb(25, 25, 25);
             color: whitesmoke;
-            font-family:'Courier New', Courier, monospace;
+            font-family: 'Courier New', Courier, monospace;
         }
 
-        img{
+        .move-icon,
+        img {
             width: 100px;
             background-color: whitesmoke;
             padding: 10px;
@@ -23,12 +24,29 @@
             cursor: pointer;
         }
 
-        .boton{
+        .move{
+            margin-top: 10px;
+            margin-left: 2%;
+            margin-bottom: 10px;
+        }
+        .move-icon {
+            width: 25px;
+            cursor: auto;
+        }
+
+        .boton {
             padding: 12.5px;
             background-color: whitesmoke;
             border: none;
             border-radius: 25px;
             cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        .resultado {
+            font-size: 20px;
+            font-weight: bold;
         }
     </style>
 
@@ -51,9 +69,9 @@
         playGame('Tijeras')
 
     "></button>
-    
-    <p class="js-result"></p>
-    <p class="js-moves"></p>
+
+    <p class="js-result resultado"></p>
+    <p class="js-moves move"></p>
     <p class="js-score"></p>
 
     <button class="boton" onclick="
@@ -67,6 +85,12 @@
 
     ">Reset</button>
 
+    <button class="boton" onclick="
+        autoPlay()
+    ">AutoPlay</button>
+
+
+
 
 
     <script>
@@ -76,11 +100,11 @@
         score = JSON.parse(localStorage.getItem('score'));
 
         // Hacemos esto porque con el removeItem hace que score sea null y falle el codigo, creamos un if y un contador de 0 para que todo vuelva a funcionar
-        if(!score){ // Abreviación de score === null
-            score={
+        if (!score) { // Abreviación de score === null
+            score = {
                 wins: 0,
                 losses: 0,
-                draw: 0, 
+                draw: 0,
             }
         }
 
@@ -150,16 +174,38 @@
 
             updateScoreElement()
 
-            document.querySelector('.js-result').innerHTML = `<h5>${resultado}<h5>`
-            document.querySelector('.js-moves').innerHTML = `Tu elegiste ${playerMove}. El ordenador eleigió ${computerMove}.`
-           
+            document.querySelector('.js-result').innerHTML = `${resultado}`
+            document.querySelector('.js-moves').innerHTML = `
+            Jugador 
+            <img src="Imagenes/${playerMove}.png" class="move-icon">
+            <img src="Imagenes/${computerMove}.png" class="move-icon">
+            Ordenador`
+
         }
 
-        function updateScoreElement(){
+        function updateScoreElement() {
             document.querySelector('.js-score').innerHTML = `Ganadas: ${score.wins}, Perdidas: ${score.losses}, Empate: ${score.draw}`
         }
 
+        let isAutoPlaying = false
+        // Creamos una variable para identificar la id del intervalo
+        let intervaloId = undefined
 
+        function autoPlay() {
+            if (!isAutoPlaying) {
+                // En un perido de tiempo asignado se cumplira una acción asignada
+                intervaloId = setInterval(function () {
+                    let playerMove = pickComputerMove()
+                    playGame(playerMove)
+                }, 1000)
+                isAutoPlaying = true
+            } else {
+                // Para eliminar el intervalo usaremos este comando y necesitará un id
+                clearInterval(intervaloId)
+                // Para empezar la función el intervalo tiene que ser false
+                isAutoPlaying = false;
+            }
+        }
 
     </script>
 </body>
