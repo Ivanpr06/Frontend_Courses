@@ -33,7 +33,6 @@
 
 <body>
     <h2>To Do List</h2>
-
     <div class="todo-input-grid">
         <input class="js-input text" placeholder="Insert Action">
         <input class="js-date-input text" type="date">
@@ -44,10 +43,23 @@
 
     <div class="js-todo-list todo-grid"></div>
 
+    <input class="js-input" placeholder="Insert Action">
+    <input type="date">
+    <button onclick="
+        addTodo()
+    
+    ">Añadir</button>
 
+    <div class="js-todo-list">Texto</div>
 
     <script>
-        let todoList = []
+        let todoList = [{
+            nombre: 'make dinner',
+            fecha: '2022-12-22'
+        }, {
+            nombre: 'lavar platos',
+            fecha: '2012-04-12'
+        }]
 
         renderTodoList()
 
