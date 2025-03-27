@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>App</title>
     <style>
         body {
             text-align: center;
@@ -19,7 +19,6 @@
 <body>
     <h4>Ejercicio 1</h4>
     <button class="js-boton-cambiar" onclick="
-        document.querySelector('.js-boton-cambiar').innerHTML = 'Loading ...'
         cambiarBoton()
     ">Start</button>
 
@@ -31,34 +30,59 @@
     <p class="js-text"></p>
 
     <h4>Ejercicio 3</h4>
-    <p>Mira arriba Crack</p>
+    <button class="js-boton-añadir" onclick="
+        añadirTitulo()
+    ">Add</button>
+
+    <button class="js.boton-eliminar" onclick="
+        borrarTitulo()
+    ">Remove</button>
+
     <script>
         function cambiarBoton() {
-            setInterval(function () {
+            document.querySelector('.js-boton-cambiar').innerHTML = 'Loading ...'
+
+            // Repite la acción cada timpo que tu le pases
+            setTimeout(function () {
                 document.querySelector('.js-boton-cambiar').innerHTML = 'Finished !'
             }, 1500)
         }
 
         function añadirTexto() {
             document.querySelector('.js-text').innerHTML = 'Added'
-            Intervalo()
-        
-        }
 
-        function Intervalo(){
-            setInterval(function () {
+            // Hace la accion una vez 
+            setTimeout(function () {
                 document.querySelector('.js-text').innerHTML = ''
             }, 2000)
+
         }
 
-        function CambioTitulo(){
-            let textos = ['App', 'Te ha llegao un mensaje', 'Q miras bobo']
-
-            textos.forEach(function(texto, index){
-                document.title = texto
-            })
+        function añadirTitulo() {
+            if (document.title == 'App') {
+                document.title = '(1) New Messages'
+            } else if (document.title == '(1) New Messages') {
+                document.title = '(2) New Messages'
+            } else if (document.title == '(2) New Messages') {
+                document.title = '(3) New Messages'
+            } else if (document.title == '(3) New Messages') {
+                document.title = '(4) New Messages'
+            }
         }
-        CambioTitulo()
+
+        function borrarTitulo() {
+            if (document.title == '(4) New Messages') {
+                document.title = '(3) New Messages'
+            } else if (document.title == '(3) New Messages') {
+                document.title = '(2) New Messages'
+            } else if (document.title == '(2) New Messages') {
+                document.title = '(1) New Messages'
+            } else if (document.title == '(1) New Messages') {
+                document.title = 'App'
+            }
+        }
+
+
     </script>
 </body>
 

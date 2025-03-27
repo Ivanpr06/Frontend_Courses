@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijeras</title>
+    <link rel="stylesheet" href="./Piedra_Papel_Tijeras.css">
+</head>
+
+<body>
+    <h1 style="font-weight: bold;">Piedra, Papel o Tijeras</h1>
+
+    <img src="./Imagenes/piedra.png" class="js-rock-button" onclick="
+        playGame('Piedra')
+    "></button>
+
+    <img src="./Imagenes/papel.png" onclick="
+        playGame('Papel')
+
+     "></button>
+
+    <img src="./Imagenes/tijeras.png" onclick="
+        playGame('Tijeras')
+
+    "></button>
+
+    <p class="js-result resultado"></p>
+    <p class="js-moves move"></p>
+    <p class="js-score"></p>
+
+    <button class="boton" onclick="
+       Reset()
+    ">Reset</button>
+
+    <button class="boton" onclick="
+        autoPlay()
+    ">AutoPlay</button>
+
+    <script src="./Piedra_Papel_Tijeras.js"></script>
+</body>
+
+</html>
