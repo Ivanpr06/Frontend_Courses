@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistor Color</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="margin-bottom: 5%;">Resistor Color</h1>
+    <div style="display: flex; gap:2%; justify-content: center;">
+        <h5>Enter your Resistor Color</h5>
+        <input class="js-input" placeholder="Insert Numbers"  onkeydown="
+        if(event.key === 'Enter'){
+            GiveColors()
+        }">
+    </div>
+
+    <p class="js-text"></p>
+
+    <script>
+        let dictColor = {
+            '0': 'black', '1': 'brown', '2': 'red',
+            '3': 'orange', '4': 'yellow', '5': 'green',
+            '6': 'blue', '7': 'violet', '8': 'grey',
+            '9': 'white',
+        }
+
+        function GiveCookie(){
+            let name = document.querySelector('.js-input').value
+
+            if(dictColor[0] = '0'){
+                document.querySelector('.js-text').innerHTML = `${dictColor.name}`
+            }else{
+                document.querySelector('.js-text').innerHTML = `One for you, one for me.`
+            }
+        }
+    </script>
+
+</body>
+</html>

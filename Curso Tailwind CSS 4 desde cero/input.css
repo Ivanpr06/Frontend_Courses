@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gradient1: #9a6eb9;
+  --color-gradient2: #cc7dbd;
+  --color-gradient3: #fcd556;
+  --color-colortext: #FFFFFF;
+}
+
+.social-button {
+  @apply relative z-10 p-2 size-12 flex items-center justify-center rounded-full transition-transform hover:scale-105;
+}

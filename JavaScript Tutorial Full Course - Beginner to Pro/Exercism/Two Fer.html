@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Fer</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="margin-bottom: 5%;">Two Fer</h1>
+    <div style="display: flex; gap:2%; justify-content: center;">
+        <h5>What's your name</h5>
+        <input class="js-input" placeholder="Insert Name"  onkeydown="
+        if(event.key === 'Enter'){
+            GiveCookie()
+        }">
+    </div>
+
+    <p class="js-text"></p>
+
+    <script>
+        let listname = ['Alice', 'Bohdan', 'Zaphod']
+
+        function GiveCookie(){
+            let name = document.querySelector('.js-input').value
+
+            if(listname.includes(name)){
+                document.querySelector('.js-text').innerHTML = `One for ${name}, one for me.`
+            }else{
+                document.querySelector('.js-text').innerHTML = `One for you, one for me.`
+            }
+        }
+    </script>
+    
+</body>
+</html>

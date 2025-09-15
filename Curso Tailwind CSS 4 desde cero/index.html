@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/output.css">
+</head>
+
+<body
+  class="relative w-4xl mx-auto min-h-dvh bg-gradient-to-b from-[var(--color-gradient1)] via-[var(--color-gradient2)] to-[var(--color-gradient3)]">
+  <!-- Fondo -->
+  <div
+    class="absolute inset-0 -z-10 bg-[url('/fondo.png')] bg-cover bg-[center_25%] mask-x-from-75% mask-x-to-100% pointer-events-none">
+  </div>
+
+  <header>
+    <img src="./img_principal.png"
+      class="w-4xl object-cover mask-b-from-20% mask-b-to-80% mask-x-from-80% mask-x-to-90%">
+
+    <div class="group relative max-w-40 mx-auto -mt-60 rounded-full p-[1px] bg-black cursor-pointer">
+      <!-- Borde con gradient en hover -->
+      <div
+        class="absolute inset-0 rounded-full bg-gradient-to-b from-[var(--color-gradient1)] via-[var(--color-gradient2)] to-[var(--color-gradient3)] opacity-0 group-hover:opacity-100 transition duration-300">
+      </div>
+
+      <!-- Contenido con fondo negro -->
+      <div class="relative flex justify-center items-center bg-black rounded-full px-3 py-1">
+        <p
+          class="bg-gradient-to-b from-[var(--color-gradient1)] via-[var(--color-gradient2)] to-[var(--color-gradient3)] text-transparent bg-clip-text text-lg">
+          @IlloJuan
+        </p>
+        <img src="./verificado.png" class="h-5 ml-2">
+      </div>
+    </div>
+
+    <!-- Aquí usas la variable -->
+    <h1 class="flex justify-center text-colortext text-4xl font-bold m-1.5">
+      Juan Alberto García
+    </h1>
+
+    <section class="flex gap-2 justify-center m-2">
+      <!-- Twitch -->
+      <a href="https://www.twitch.tv/illojuan?lang=es" class="bg-purple-200 social-button" title="Twitch">
+        <svg width="28" height="28">
+          <use xlink:href="./sprite.svg#twitch"></use>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@IlloJuan_" class="bg-red-50 social-button" title="YouTube">
+        <svg width="28" height="28">
+          <use xlink:href="./sprite.svg#youtube"></use>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com" class="bg-blue-50 social-button" title="LinkedIn">
+        <svg width="28" height="28">
+          <use xlink:href="./sprite.svg#linkedin"></use>
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/illojuan/?hl=es"
+        class="bg-gradient-to-br from-yellow-300 via-pink-600 to-purple-600 social-button" title="Instagram">
+        <svg width="28" height="28">
+          <use xlink:href="./sprite.svg#instagram"></use>
+        </svg>
+      </a>
+      <!-- X (Twitter) -->
+      <a href="https://x.com/illojuan?lang=es" class="bg-black social-button" title="X">
+        <svg width="28" height="28">
+          <use xlink:href="./sprite.svg#x"></use>
+        </svg>
+      </a>
+    </section>
+  </header>
+
+  <main class="pt-4">
+    <!--Concursillo-->
+    <div class="grid grid-cols-3 grid-rows-2 gap-4 w-2xl mx-auto">
+      <a href="https://www.youtube.com/playlist?list=PLVwGIWvgnZKy5Q0j5mZ-FpM26qkM_muaB"
+        class="relative group bg-gradient-to-t from-[#0A051D] via-[#4D0373] to-[#A00085] text-white rounded-3xl overflow-hidden flex flex-col items-start hover:scale-105 hover:contrast-125 transition col-span-2 h-45">
+        <span class="absolute top-2 left-2 text-xs border rounded-xl px-1.5 py-1 mb-2">18 videos · 496.743
+          visualizaciones</span>
+        <img src="concursillo.png"
+          class="absolute -bottom-2 -right-2 mask-l-from-95% mask-t-from-95% w-60 group-hover:scale-105 transition-transform">
+        <span class="absolute bottom-2 left-2 font-bold text-3xl">El Concursillo</span>
+      </a>
+      <!--Bully-->
+      <a href="https://www.youtube.com/playlist?list=PLVwGIWvgnZKyQbPW8hgTCVl9yqlVYz31_"
+        class="relative group bg-gradient-to-b from-[#00264D] via-[#003366] to-[#D4AF37] text-white rounded-3xl overflow-hidden flex flex-col items-start hover:scale-105 hover:contrast-125 transition col-span-1 h-45">
+        <span class="absolute top-2 left-2 text-xs border rounded-xl px-1.5 py-1 mb-2">4 vídeos · 313.317
+          visualizaciones</span>
+        <img src="bully.png"
+          class="absolute -bottom-1 right-0 mask-l-from-95% mask-t-from-95% w-25 group-hover:scale-105 transition-transform">
+        <span class="absolute bottom-2 left-2 font-bold text-3xl">Bully</span>
+      </a>
+      <!--South Park-->
+      <a href="https://www.youtube.com/playlist?list=PLVwGIWvgnZKy5Q0j5mZ-FpM26qkM_muaB"
+        class="relative group bg-gradient-to-br from-[#8B0000] via-[#FFA500] to-[#0A051D] text-white rounded-3xl overflow-hidden flex flex-col items-start hover:scale-105 hover:contrast-125 transition col-span-1 h-45">
+        <span class="absolute top-2 left-2 text-xs border rounded-xl px-1.5 py-1 mb-2">6 vídeos • 457.643 visualizaciones</span>
+        <img src="southPark.png" class="absolute -bottom-1 -right-6 w-35 h-35 mask-l-from-95% mask-t-from-95% group-hover:scale-105 transition-transform">
+        <span class="absolute bottom-2 left-2 font-bold text-2xl">South<br>Park</span>
+      </a>
+      <!--RDR2-->
+      <a href="https://www.youtube.com/playlist?list=PLVwGIWvgnZKy5Q0j5mZ-FpM26qkM_muaB"
+        class="relative group bg-gradient-to-b from-[#f32323] via-[#E44D26] to-[#d5c035] text-white rounded-3xl overflow-hidden flex flex-col items-start hover:scale-105 hover:contrast-125 transition col-span-2 h-45">
+        <span class="absolute top-2 left-2 text-xs border rounded-xl px-1.5 py-1 mb-2">21 vídeos • 2.354.158 visualizacione</span>
+        <img src="rdr2.png"
+          class="absolute -bottom-2 -right-2 mask-l-from-95% mask-t-from-95% w-60 group-hover:scale-105 transition-transform">
+        <span class="absolute bottom-2 left-2 font-bold text-3xl">Red Dead<br> Redemption 2</span>
+      </a>
+    </div>
+
+
+  </main>
+</body>
+
+</html>

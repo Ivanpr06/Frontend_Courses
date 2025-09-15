@@ -1,0 +1,17 @@
+.welcomeMessage {
+    font-size: 2.5rem;
+    background-color: green;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 0;
+}
+
+.loggMessage {
+    font-size: 2.5rem;
+    background-color: red;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 0;
+}
