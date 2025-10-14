@@ -10,8 +10,13 @@ In this repository, you will find several courses I completed independently whil
     <p><a href="https://www.youtube.com/watch?v=1glVfFxj8a4">JAVASCRIPT Desde Cero - CURSO Completo</a></p>
     <p><a href="https://www.youtube.com/watch?v=EerdGm-ehJQ&t=63797s">avaScript Tutorial Full Course - Beginner to Pro</a></p>
   </li>
-  <li><h3>Curso Python Principiantes [Intermedio] 🖱️</h3>
-  <img src="https://img.shields.io/badge/Python-blue?logo=Python&logoColor=yellow"> 
+  <li><h3>Curso Tailwind CSS 4 desde cero ⌨️</h3>
+  <img src="https://img.shields.io/badge/Tailwindcss-blue?logo=Tailwindcss&logoColor=white"> 
+    <p>In this course, you can find information about a MoureDev course by Brais Moure that anyone can watch on YouTube. He teaches us a large amount of useful information about Python, such as handling         dates, list comprehension, lambdas, higher-order functions, displaying all types of errors in our Python code, file handling, regular expressions, and package management. Moreover, all this theory is        accompanied by a ton of exercises on <a href="https://retosdeprogramacion.com/ejercicios/">Brais's website</a>, which are very useful.</p>
+    <p><a href="https://youtu.be/TbcEqkabAWU?si=9-3lGV_VgnrhxgDF">Link</a></p>
+  </li>
+  <li><h3>Curso React 🖱️</h3>
+  <img src="https://img.shields.io/badge/React-grey?logo=React"> 
     <p>In this course, you can find information about a MoureDev course by Brais Moure that anyone can watch on YouTube. He teaches us a large amount of useful information about Python, such as handling         dates, list comprehension, lambdas, higher-order functions, displaying all types of errors in our Python code, file handling, regular expressions, and package management. Moreover, all this theory is        accompanied by a ton of exercises on <a href="https://retosdeprogramacion.com/ejercicios/">Brais's website</a>, which are very useful.</p>
     <p><a href="https://youtu.be/TbcEqkabAWU?si=9-3lGV_VgnrhxgDF">Link</a></p>
   </li>
